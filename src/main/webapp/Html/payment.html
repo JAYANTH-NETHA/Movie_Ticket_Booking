@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking - Payment</title>
+    <link rel="stylesheet" href="../Css/style.css">
+</head>
+<body>
+    <header class="head">
+        <img src="https://mojomox.com/assets/images/articles/logo-ideas/_update-01/logo-idea-symbol-icon-05.png" alt="Logo" height="50" width="50">
+        <h2>Movie Ticket Booking</h2>
+        <input type="search" placeholder="&#128269;">
+        <a href="./login.html" class="logout">Logout</a>  
+    </header>
+
+    <nav class="navbar">
+        <a href="./index.html">Home</a>
+        <a href="./mybooking.html">My Booking</a>
+        <a href="./profile.html">Profile</a>
+    </nav><br><br><hr><br><br>
+
+    <main>
+        <h2>Select Payment Method</h2>
+
+        <form action="./mybooking.html">
+
+            <div class="payment-type">
+                <input type="radio" name="payment" id="upi">
+                <label for="upi">UPI</label>
+            </div><br>
+            <div class="payment-type">
+                <input type="radio" name="payment" id="credit">
+                <label for="credit">Credit Card</label>
+            </div><br>
+            <div class="payment-type">
+                <input type="radio" name="payment" id="debit">
+                <label for="debit" >Debit Card</label>
+            </div><br>
+            <div class="payment-type">
+                <input type="radio" name="payment" id="net">
+                <label for="net">Net Banking</label>
+            </div><br>
+            <div class="payment-type">
+                <input type="radio" name="payment" id="cash">
+                <label for="cash">Cash on Counter</label>
+            </div><br><br>
+
+            <div class="payment-data">
+                <input type="text" placeholder=" Enter Your Coupon Code" class="coupon" pattern="[A-Z0-9]+" title="Coupon Must Contain Uppercase Letters and Digits only" > <br><br><br><br>
+                <button type="submit" class="coupon">Proceed To Payment</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

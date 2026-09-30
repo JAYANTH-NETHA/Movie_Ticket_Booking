@@ -1,0 +1,392 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Base & Global Reset
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+body {
+    background-color: #f1f5f9; /* Light Slate Gray */
+    color: #1e293b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: #e11d48;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #be123c;
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 40px;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #e2e8f0;
+}
+
+input[type="search"] {
+    width: 280px;
+    padding: 10px 16px;
+    border-radius: 20px;
+    border: 1px solid #cbd5e1;
+    background-color: #f8fafc;
+    font-size: 14px;
+    color: #0f172a;
+}
+
+input[type="search"]:focus {
+    outline: none;
+    border-color: #e11d48;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15);
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background: #1e293b; /* Dark slate navbar accent */
+    padding: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.navbar a {
+    color: #f8fafc;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.navbar a:hover {
+    color: #e11d48;
+}
+
+/* ==========================================================================
+   Movie Cards & Grid
+   ========================================================================== */
+.allmovies {
+    padding: 40px 60px;
+}
+
+.movies {
+    display: flex;
+    gap: 30px;
+    justify-content: center; 
+    flex-wrap: wrap;
+}
+
+.movie {
+    width: 220px;
+    padding: 14px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+}
+
+.movie:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: #f1f5f9;
+}
+
+.movie img {
+    border-radius: 8px;
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.book-button, button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+    color: #ffffff !important;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(225, 29, 72, 0.25);
+    text-align: center;
+}
+
+.book-button:hover, button:hover {
+    background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.35);
+}
+
+.book-button:active, button:active {
+    transform: translateY(0);
+}
+
+.logout {
+    background: #e11d48;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.logout:hover {
+    background: #0f172a; /* Transitions to slate dark on hover */
+}
+
+/* ==========================================================================
+   Single Movie Detail View
+   ========================================================================== */
+.onemovie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+.book {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.theatre-book {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.date {
+    display: flex;
+    gap: 12px;
+}
+
+.time {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #e0e7ff;
+    color: #3730a3;
+    font-weight: 600;
+    border-radius: 6px;
+    border: 1px solid #c7d2fe;
+}
+
+.time:hover {
+    background: #6366f1;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Main Layout & Seat Selection
+   ========================================================================== */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+.booking-info, .seat-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.side {
+    display: flex;
+    gap: 40px;
+}
+
+.seating {
+    display: flex;
+    gap: 10px;
+}
+
+.row button {
+    width: 40px;
+    height: 38px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    color: #334155;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+.row button:hover {
+    background: #e11d48;
+    border-color: #be123c;
+    color: #ffffff !important;
+    transform: scale(1.08);
+}
+
+/* ==========================================================================
+   Booking Summary & Payment
+   ========================================================================== */
+.booking-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background: #ffffff;
+    width: 360px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.payment-data {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.payment-type {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.payment-type input[type="radio"] {
+    accent-color: #e11d48;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.payment-type label {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #334155;
+}
+
+/* ==========================================================================
+   Booking Confirmation / Success
+   ========================================================================== */
+.booking-card {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.booking-success {
+    display: flex;
+    gap: 40px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 32px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    align-items: flex-start;
+}
+
+.booking-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.booking-details button {
+    width: 180px;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   Profile Card
+   ========================================================================== */
+.profile-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 36px; 
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    background-color: #ffffff;
+}
+
+.profile-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid #e11d48;
+    object-fit: cover;
+    box-shadow: 0 6px 16px rgba(225, 29, 72, 0.2);
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+}
+
+.profile-details p {
+    font-size: 17px;
+    color: #334155;
+}
+
+.profile-details p strong {
+    color: #0f172a;
+}
+
+.profile-details button {
+    width: 180px;
+    padding: 12px;
+    margin-top: 10px;
+}
